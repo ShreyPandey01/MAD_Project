@@ -121,4 +121,15 @@
             />
     </androidx.gridlayout.widget.GridLayout>
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="107dp"
+        android:layout_height="60dp"
+        android:onClick="reset"
+        android:text="RESET"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

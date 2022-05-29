@@ -1,6 +1,7 @@
 package com.example.tictactoee;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.gridlayout.widget.GridLayout;
 
 import android.os.Bundle;
 import android.view.View;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
                 player = 0;
             } else {
                 v.setImageResource(R.drawable.sparrow);
+                gameState[tag] = player;
                 Toast.makeText(this, tag + "" + "Sparrow", Toast.LENGTH_SHORT).show();
                 player = 1;
             }
@@ -36,6 +38,23 @@ public class MainActivity extends AppCompatActivity {
                     isWinner = true;
                 }
             }
+        }
+    }
+
+    public void reset(View view)
+    {
+        GridLayout gridlayout =findViewById(R.id.gridLayout);
+        int total_images= gridlayout.getChildCount();
+        for(int i=0;i<total_images;i++)
+        {
+            ImageView v=(ImageView)gridlayout.getChildAt(i);
+            v.setImageDrawable(null);
+        }
+        isWinner=false;
+        imageClicked=-1;
+        for(int i=0;i<gameState.length;i++)
+        {
+            gameState[i]=-1;
         }
     }
 
